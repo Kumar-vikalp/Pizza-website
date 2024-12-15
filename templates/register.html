@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/images/bg_4.jpg');
+    background-size: cover; /* Make sure it covers the entire body */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Form Page Specific Styles */
+.form-page {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Ensure full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-page .form-container {
+    max-width: 600px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.13);
+    padding: 50px 35px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+}
+
+.form-page .form-label {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.form-page .form-control {
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.form-page .form-control::placeholder {
+    color: white;
+    opacity: 0.7;
+}
+
+.form-page button:hover {
+    background-color: #0056b3;
+}
+
+.form-page .message a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.form-page .message a:hover {
+    text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+    {% include 'header.html' %}
+    <main class="form-page">
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="full_name" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="full_name" id="full_name" placeholder="Enter Full name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email_id" class="form-label">Email id</label>
+                    <input type="email" class="form-control" name="email_id" id="email_id" placeholder="Enter Email Id" required>
+                </div>
+                <div class="mb-3">
+                    <label for="pass" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="pass" id="pass" placeholder="Enter password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="conf_pass" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" name="conf_pass" id="conf_pass" placeholder="Enter Confirm password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <p class="message" style="color: #ffffff;">Already have an account? <a href="/login">Log in</a></p>
+            </form>
+        </div>
+    </main>
+    {% include 'footer.html' %}
+</body>
+
+</html>
