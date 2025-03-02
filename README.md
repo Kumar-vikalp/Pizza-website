@@ -3,6 +3,8 @@
 A Django-based web application for managing and displaying information about various pizzas. This project includes features such as user registration, login, pizza listing, and more. It is designed for learning and demonstration purposes.
 
 ---
+## Deployed on KOyeb 
+Live = https://eligible-ciel-punvers-43ec5b24.koyeb.app/home/
 
 ## Features
 
